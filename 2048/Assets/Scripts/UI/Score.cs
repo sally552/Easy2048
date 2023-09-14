@@ -23,6 +23,7 @@ namespace UI
         public void ResetScore()
         {
             SetScore(0);
+           _hiscoreText.text = LoadScore().ToString();
         }
 
         private void SetScore(int score)
@@ -39,6 +40,7 @@ namespace UI
 
             if (_score > hiscore)
             {
+                _hiscoreText.text = _score.ToString();
                 PlayerPrefs.SetInt(SCORE_KEY, _score);
             }
         }
